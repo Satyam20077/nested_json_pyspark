@@ -65,6 +65,7 @@ data =data.select(
     col("amount.amount").alias("AMOUNT")
 )
 
-data.show(truncate = False)
-data.printSchema()
-print(data.count())
+data\
+    .write\
+    .mode("overwrite")\
+    .parquet("C:/Users/satya/PySpaak/parquet_dataset")
